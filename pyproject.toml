@@ -1,5 +1,5 @@
 [project]
-name = "308-occra-2025-vision"
+name = "cube-detector"
 version = "0.1.0"
 description = "308 Monsters’ coprocessor vision code for the 2025 OCCRA season."
 authors = [{ name = "308 Monsters" }]
