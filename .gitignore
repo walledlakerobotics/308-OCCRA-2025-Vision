@@ -1,4 +1,30 @@
-poetry.lock
+# Python
+__pycache__/
+*.pyc
+*.o
+*.so
+*.egg
+*.egg-info/
+.eggs/
 dist/
+build/
+venv/
+.venv/
 
-src/__pycache__/
+# Poetry
+poetry.lock
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.bak
+*~
+.DS_Store
+
+# Operating System Files
+Thumbs.db
+
+# Logs and temporary files
+*.log
+tmp/
