@@ -1,0 +1,11 @@
+[project]
+name = "308-occra-2025-vision"
+version = "0.1.0"
+description = "308 Monsters’ coprocessor vision code for the 2025 OCCRA season."
+authors = [{ name = "308 Monsters" }]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
