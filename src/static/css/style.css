@@ -1,0 +1,38 @@
+:root {
+    --backgroundColor: rgb(36, 33, 48); 
+    --foregroundColor: rgb(22, 15, 43);
+    --borderColor: rgb(190, 179, 237);
+}
+
+p {
+    margin: 0%;
+}
+
+body {
+    background-color: var(--backgroundColor);
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav {
+    background-color: var(--foregroundColor);
+    border-right: 1.5px solid var(--borderColor);
+    margin: 0;
+
+    height: 100%;
+    width: 4rem;
+
+    transition: 0.5s;
+
+}
+
+nav:hover {
+    width: 15rem;
+}
+
+#navbar:li {
+    margin: 5px;
+}
