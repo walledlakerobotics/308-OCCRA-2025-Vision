@@ -1,30 +1,10 @@
-# Python
+# Python-generated files
 __pycache__/
-*.pyc
-*.o
-*.so
-*.egg
-*.egg-info/
-.eggs/
-dist/
+*.py[oc]
 build/
-venv/
-.venv/
+dist/
+wheels/
+*.egg-info
 
-# Poetry
-poetry.lock
-
-# IDEs and Editors
-.vscode/
-.idea/
-*.swp
-*.bak
-*~
-.DS_Store
-
-# Operating System Files
-Thumbs.db
-
-# Logs and temporary files
-*.log
-tmp/
+# Virtual environments
+.venv

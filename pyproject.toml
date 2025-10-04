@@ -2,13 +2,16 @@
 name = "cube-detector"
 version = "0.1.0"
 description = "308 Monsters’ coprocessor vision code for the 2025 OCCRA season."
+readme = "README.md"
 authors = [{ name = "308 Monsters" }]
 requires-python = ">=3.13"
-dependencies = ["opencv-python (>=4.12.0.88,<5.0.0.0)"]
+dependencies = [
+    "opencv-python>=4.12.0.88",
+]
 
 [project.scripts]
 cube-detector = "cube_detector:main"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.8.22,<0.9.0"]
+build-backend = "uv_build"
