@@ -1,0 +1,73 @@
+:root {
+    --backgroundColor: rgb(36, 33, 48); 
+    --foregroundColor: rgb(22, 15, 43);
+    --borderColor: rgb(190, 179, 237);
+
+    --borderColorUnhover: rgb(71, 60, 121);
+    --buttonColor: rgb(23, 14, 48);
+    --activeButton: rgb(185, 255, 252);
+}
+
+body {
+    background-color: var(--backgroundColor);
+
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#navBar {
+    background-color: var(--foregroundColor);
+    border-right: 1.5px solid var(--borderColor);
+    margin: 0;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+
+    margin: 0px;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 5%;
+
+    height: 100%;
+    width: 4rem;
+
+    transition: 0.5s;
+}
+
+#navBar:hover {
+    width: 15rem;
+}
+
+#navBar button {
+    color: var(--borderColorUnhover);
+    background-color: var(--buttonColor);
+
+    border: solid;
+    border-color: var(--borderColorUnhover);
+    border-width: 1.5px;
+    border-radius: 5px;
+
+    margin-bottom: 5px;
+
+    width: 100%;
+    padding: 10px;
+
+    transition: 0.2s;
+
+}
+
+#navBar button:hover {
+    color: var(--borderColor);
+    border-color: var(--borderColor);
+}
+
+#navBar button:active {
+    color: var(--activeButton);
+    border-color: var(--activeButton);
+}
+
+#navBar li {
+    list-style-type: none;
+}
