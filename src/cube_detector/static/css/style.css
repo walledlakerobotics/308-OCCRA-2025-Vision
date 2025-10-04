@@ -2,22 +2,25 @@
     --backgroundColor: rgb(36, 33, 48); 
     --foregroundColor: rgb(22, 15, 43);
     --borderColor: rgb(190, 179, 237);
+
     --borderColorUnhover: rgb(71, 60, 121);
     --buttonColor: rgb(23, 14, 48);
-    --activeButton: rgb(229, 255, 254);
-
-    --windowColor: rgb(18, 16, 42);
+    --activeButton: rgb(185, 255, 252);
 }
 
 body {
     background-color: var(--backgroundColor);
+
+    height: 100vh;
     margin: 0;
     padding: 0;
+    
 }
 
 #navBar {
     background-color: var(--foregroundColor);
     border-right: 1.5px solid var(--borderColor);
+    margin: 0;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 
     position: fixed;
@@ -68,16 +71,3 @@ body {
 #navBar li {
     list-style-type: none;
 }
-
-
-/* .window {
-    background-color: var(--windowColor);
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    position: relative;
-
-    x: 100px; y: 100px;
-
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-} */
