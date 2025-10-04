@@ -1,15 +1,3 @@
-import cv2
+from .main import main
 
-
-def main():
-    camera = cv2.VideoCapture(0)
-
-    while True:
-        ret, frame = camera.read()
-        if not ret:
-            break
-
-        cv2.imshow("Camera Feed", frame)
-
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+__all__ = ["main"]
