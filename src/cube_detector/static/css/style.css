@@ -5,7 +5,7 @@
 
     --borderColorUnhover: rgb(71, 60, 121);
     --buttonColor: rgb(23, 14, 48);
-    --activeButton: rgb(185, 255, 252);
+    --activeButton: rgb(190, 240, 255);
 }
 
 body {
@@ -26,28 +26,36 @@ body {
     position: fixed;
 
     margin: 0px;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
     padding-bottom: 5%;
 
     height: 100%;
-    width: 4rem;
+    width: 2.5rem;
 
     transition: 0.5s;
+    
 }
 
 #navBar:hover {
+    padding-left: 1%;
+    padding-right: 1%;
     width: 15rem;
+
+    button {
+        color: var(--borderColorUnhover);
+        border-radius: 5px;
+    }
 }
 
 #navBar button {
-    color: var(--borderColorUnhover);
+    
     background-color: var(--buttonColor);
 
     border: solid;
     border-color: var(--borderColorUnhover);
     border-width: 1.5px;
-    border-radius: 5px;
+    border-radius: 100%;
 
     margin-bottom: 5px;
 
@@ -55,6 +63,7 @@ body {
     padding: 10px;
 
     transition: 0.2s;
+    color: rgba(0, 0, 0, 0);
 
 }
 
@@ -70,4 +79,6 @@ body {
 
 #navBar li {
     list-style-type: none;
+
+    margin-bottom: 5px;
 }
