@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Svelte Build
+src/cube_detector/static
