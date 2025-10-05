@@ -2,7 +2,7 @@ from wsgiref.simple_server import make_server
 from threading import Thread
 from flask import Flask
 
-app = Flask(__name__, static_url_path="")
+app = Flask(__name__, static_url_path="/")
 
 
 @app.route("/index.html")
