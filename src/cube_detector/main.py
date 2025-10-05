@@ -1,10 +1,11 @@
 import cv2
-from . import server
+import waitress
+
+from threading import Thread
+from .server import app
 
 
-def main():
-    httpd = server.start()
-
+def cv():
     camera = None
 
     try:
@@ -24,5 +25,9 @@ def main():
     finally:
         cv2.destroyAllWindows()
         camera.release() if camera else None
-        
-        httpd.shutdown()
+
+def main():
+    cv_thread = Thread(target=cv)
+    cv_thread.start()
+
+    waitress.serve(app, host="0.0.0.0", port=80)
