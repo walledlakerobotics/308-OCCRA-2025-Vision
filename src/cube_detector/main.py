@@ -23,5 +23,4 @@ def main():
     finally:
         cv2.destroyAllWindows()
         camera.release()
-
-    httpd.shutdown()
+        httpd.shutdown()
