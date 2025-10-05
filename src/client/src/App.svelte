@@ -1,27 +1,28 @@
-:root {
-    --backgroundColor: rgb(36, 33, 48); 
+<nav>
+  <ul>
+    <li><button type="button">Dashboard</button></li>
+    <li><button type="button">Calibration</button></li>
+    <li><button type="button">Cameras</button></li>
+    <li><button type="button">Settings</button></li>
+  </ul>
+</nav>
+
+<style>
+  :root {
+    --backgroundColor: rgb(36, 33, 48);
     --foregroundColor: rgb(22, 15, 43);
     --borderColor: rgb(190, 179, 237);
 
     --borderColorUnhover: rgb(71, 60, 121);
     --buttonColor: rgb(23, 14, 48);
     --activeButton: rgb(190, 240, 255);
-}
+  }
 
-body {
-    background-color: var(--backgroundColor);
-
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    
-}
-
-ul {
+  ul {
     padding-left: 0;
-}
+  }
 
-nav {
+  nav {
     background-color: var(--foregroundColor);
     border-right: 1.5px solid var(--borderColor);
     margin: 0;
@@ -38,23 +39,21 @@ nav {
     width: 2.5rem;
 
     transition: 0.5s;
-    
-}
+  }
 
-nav:hover {
+  nav:hover {
     padding-left: 1%;
     padding-right: 1%;
     width: 15rem;
 
     button {
-        color: var(--borderColorUnhover);
-        border-radius: 5px;
-        transition: 0.2s;
+      color: var(--borderColorUnhover);
+      border-radius: 5px;
+      transition: 0.2s;
     }
-}
+  }
 
-nav button {
-    
+  nav button {
     background-color: var(--buttonColor);
 
     border: solid;
@@ -67,25 +66,24 @@ nav button {
     width: 100%;
     padding: 10px;
 
-    
     color: rgba(0, 0, 0, 0);
 
     transition: 0.5s;
+  }
 
-}
-
-nav button:hover {
+  nav button:hover {
     color: var(--borderColor);
     border-color: var(--borderColor);
-}
+  }
 
-nav button:active {
+  nav button:active {
     color: var(--activeButton);
     border-color: var(--activeButton);
-}
+  }
 
-nav li {
+  nav li {
     list-style-type: none;
 
     margin-bottom: 5px;
-}
+  }
+</style>
