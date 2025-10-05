@@ -10,4 +10,4 @@ wheels/
 .venv
 
 # Svelte Build
-src/static
+src/cube_detector/static
