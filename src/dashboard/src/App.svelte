@@ -5,32 +5,22 @@
 </script>
 
 <nav>
-  <ul>
-    <li>
-      <button
-        class:selected={selected == "Dashboard"}
-        onclick={() => (selected = "Dashboard")}>Dashboard</button
-      >
-    </li>
-    <li>
-      <button
-        class:selected={selected == "Calibration"}
-        onclick={() => (selected = "Calibration")}>Calibration</button
-      >
-    </li>
-    <li>
-      <button
-        class:selected={selected == "Cameras"}
-        onclick={() => (selected = "Cameras")}>Cameras</button
-      >
-    </li>
-    <li>
-      <button
-        class:selected={selected == "Settings"}
-        onclick={() => (selected = "Settings")}>Settings</button
-      >
-    </li>
-  </ul>
+  <button
+    class:selected={selected == "Dashboard"}
+    onclick={() => (selected = "Dashboard")}>Dashboard</button
+  >
+  <button
+    class:selected={selected == "Calibration"}
+    onclick={() => (selected = "Calibration")}>Calibration</button
+  >
+  <button
+    class:selected={selected == "Cameras"}
+    onclick={() => (selected = "Cameras")}>Cameras</button
+  >
+  <button
+    class:selected={selected == "Settings"}
+    onclick={() => (selected = "Settings")}>Settings</button
+  >
 </nav>
 
 <main>
@@ -46,20 +36,6 @@
 </main>
 
 <style>
-  :root {
-    --backgroundColor: rgb(36, 33, 48);
-    --foregroundColor: rgb(22, 15, 43);
-    --borderColor: rgb(190, 179, 237);
-
-    --borderColorUnhover: rgb(71, 60, 121);
-    --buttonColor: rgb(23, 14, 48);
-    --activeButton: rgb(190, 240, 255);
-  }
-
-  ul {
-    padding-left: 0;
-  }
-
   nav {
     background-color: var(--foregroundColor);
     border-right: 1.5px solid var(--borderColor);

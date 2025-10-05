@@ -1,8 +1,20 @@
+:root {
+  --backgroundColor: rgb(36, 33, 48);
+  --foregroundColor: rgb(22, 15, 43);
+  --borderColor: rgb(190, 179, 237);
+
+  --borderColorUnhover: rgb(71, 60, 121);
+  --buttonColor: rgb(23, 14, 48);
+  --activeButton: rgb(190, 240, 255);
+}
+
 body {
   background-color: var(--backgroundColor);
 
   height: 100vh;
   padding: 0;
+
+  color: var(--activeButton);
 }
 
 * {
