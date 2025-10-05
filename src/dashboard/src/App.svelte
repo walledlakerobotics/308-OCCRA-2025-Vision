@@ -25,12 +25,11 @@
   nav {
     background-color: var(--foregroundColor);
     border-right: 1.5px solid var(--borderColor);
-    margin: 0;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 
     position: fixed;
 
-    margin: 0px;
+    margin: 0;
     padding-left: 0.5%;
     padding-right: 0.5%;
     padding-bottom: 5%;
