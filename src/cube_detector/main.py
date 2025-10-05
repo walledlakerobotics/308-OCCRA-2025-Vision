@@ -19,7 +19,7 @@ def cv():
             break
 
 def main():
-    cv_thread = Thread(target=cv)
+    cv_thread = Thread(target=cv, daemon=True)
     cv_thread.start()
 
     waitress.serve(app, host="0.0.0.0", port=80)
