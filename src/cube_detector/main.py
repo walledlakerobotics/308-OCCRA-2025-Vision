@@ -5,8 +5,9 @@ from . import server
 def main():
     httpd = server.start()
 
+    camera = None
+
     try:
-        global camera
         camera = cv2.VideoCapture(0)
 
         while True:
@@ -22,5 +23,6 @@ def main():
         pass
     finally:
         cv2.destroyAllWindows()
-        camera.release()
+        camera.release() if camera else None
+        
         httpd.shutdown()
