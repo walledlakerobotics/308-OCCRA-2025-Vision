@@ -6,25 +6,17 @@ from .server import app
 
 
 def cv():
-    camera = None
+    camera = cv2.VideoCapture(0)
 
-    try:
-        camera = cv2.VideoCapture(0)
+    while True:
+        ret, frame = camera.read()
+        if not ret:
+            break
 
-        while True:
-            ret, frame = camera.read()
-            if not ret:
-                break
+        cv2.imshow("Camera Feed", frame)
 
-            cv2.imshow("Camera Feed", frame)
-
-            if cv2.waitKey(1) & 0xFF == ord("q"):
-                break
-    except KeyboardInterrupt:
-        pass
-    finally:
-        cv2.destroyAllWindows()
-        camera.release() if camera else None
+        if cv2.waitKey(1) & 0xFF == ord("q"):
+            break
 
 def main():
     cv_thread = Thread(target=cv)
