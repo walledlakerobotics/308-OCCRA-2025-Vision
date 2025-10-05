@@ -1,15 +1,27 @@
 import cv2
+from . import server
 
 
 def main():
-    camera = cv2.VideoCapture(0)
+    httpd = server.start()
 
-    while True:
-        ret, frame = camera.read()
-        if not ret:
-            break
+    try:
+        global camera
+        camera = cv2.VideoCapture(0)
 
-        cv2.imshow("Camera Feed", frame)
+        while True:
+            ret, frame = camera.read()
+            if not ret:
+                break
 
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+            cv2.imshow("Camera Feed", frame)
+
+            if cv2.waitKey(1) & 0xFF == ord("q"):
+                break
+    except KeyboardInterrupt:
+        pass
+    finally:
+        cv2.destroyAllWindows()
+        camera.release()
+
+    httpd.shutdown()
