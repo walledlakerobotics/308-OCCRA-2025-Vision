@@ -1,9 +1,9 @@
 <nav>
   <ul>
-    <li><button type="button">Dashboard</button></li>
-    <li><button type="button">Calibration</button></li>
-    <li><button type="button">Cameras</button></li>
-    <li><button type="button">Settings</button></li>
+    <li><button>Dashboard</button></li>
+    <li><button>Calibration</button></li>
+    <li><button>Cameras</button></li>
+    <li><button>Settings</button></li>
   </ul>
 </nav>
 
