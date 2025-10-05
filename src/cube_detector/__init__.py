@@ -1,3 +1,3 @@
-from .start import main
+from .start import start
 
 __all__ = ["start"]
