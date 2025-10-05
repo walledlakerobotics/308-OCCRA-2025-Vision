@@ -1,11 +1,49 @@
+<script lang="ts">
+  import Dashboard from "./Dashboard.svelte";
+
+  let selected = $state("Dashboard");
+</script>
+
 <nav>
   <ul>
-    <li><button>Dashboard</button></li>
-    <li><button>Calibration</button></li>
-    <li><button>Cameras</button></li>
-    <li><button>Settings</button></li>
+    <li>
+      <button
+        class:selected={selected == "Dashboard"}
+        onclick={() => (selected = "Dashboard")}>Dashboard</button
+      >
+    </li>
+    <li>
+      <button
+        class:selected={selected == "Calibration"}
+        onclick={() => (selected = "Calibration")}>Calibration</button
+      >
+    </li>
+    <li>
+      <button
+        class:selected={selected == "Cameras"}
+        onclick={() => (selected = "Cameras")}>Cameras</button
+      >
+    </li>
+    <li>
+      <button
+        class:selected={selected == "Settings"}
+        onclick={() => (selected = "Settings")}>Settings</button
+      >
+    </li>
   </ul>
 </nav>
+
+<main>
+  {#if selected == "Dashboard"}
+    <Dashboard />
+  {:else if selected == "Calibration"}
+    <h1>Calibration</h1>
+  {:else if selected == "Cameras"}
+    <h1>Cameras</h1>
+  {:else if selected == "Settings"}
+    <h1>Settings</h1>
+  {/if}
+</main>
 
 <style>
   :root {
@@ -30,9 +68,7 @@
     position: fixed;
 
     margin: 0;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-    padding-bottom: 5%;
+    padding: 0.5rem;
 
     height: 100%;
     width: 2.5rem;
@@ -41,8 +77,8 @@
   }
 
   nav:hover {
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 15rem;
 
     button {
@@ -60,7 +96,8 @@
     border-width: 1.5px;
     border-radius: 100%;
 
-    margin-bottom: 5px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
 
     width: 100%;
     padding: 10px;
@@ -75,14 +112,24 @@
     border-color: var(--borderColor);
   }
 
-  nav button:active {
-    color: var(--activeButton);
+  nav button:active,
+  nav button.selected {
     border-color: var(--activeButton);
+  }
+
+  nav:hover button:active,
+  nav:hover button.selected {
+    color: var(--activeButton);
   }
 
   nav li {
     list-style-type: none;
 
     margin-bottom: 5px;
+  }
+
+  main {
+    margin-left: 3.5rem;
+    padding-left: 0.5rem;
   }
 </style>
