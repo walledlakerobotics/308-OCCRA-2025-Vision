@@ -45,6 +45,7 @@ body {
     button {
         color: var(--borderColorUnhover);
         border-radius: 5px;
+        transition: 0.2s;
     }
 }
 
@@ -62,8 +63,10 @@ body {
     width: 100%;
     padding: 10px;
 
-    transition: 0.2s;
+    
     color: rgba(0, 0, 0, 0);
+
+    transition: 0.5s;
 
 }
 
