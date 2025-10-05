@@ -17,7 +17,11 @@ body {
     
 }
 
-#navBar {
+ul {
+    padding-left: 0;
+}
+
+nav {
     background-color: var(--foregroundColor);
     border-right: 1.5px solid var(--borderColor);
     margin: 0;
@@ -37,7 +41,7 @@ body {
     
 }
 
-#navBar:hover {
+nav:hover {
     padding-left: 1%;
     padding-right: 1%;
     width: 15rem;
@@ -49,7 +53,7 @@ body {
     }
 }
 
-#navBar button {
+nav button {
     
     background-color: var(--buttonColor);
 
@@ -70,17 +74,17 @@ body {
 
 }
 
-#navBar button:hover {
+nav button:hover {
     color: var(--borderColor);
     border-color: var(--borderColor);
 }
 
-#navBar button:active {
+nav button:active {
     color: var(--activeButton);
     border-color: var(--activeButton);
 }
 
-#navBar li {
+nav li {
     list-style-type: none;
 
     margin-bottom: 5px;
