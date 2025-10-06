@@ -6,35 +6,81 @@
 
   const tabs = [
     {
+      id: "dashboard",
       name: "Dashboard",
       icon: "dashboard",
       component: Dashboard,
     },
     {
+      id: "calibration",
       name: "Calibration",
       icon: "tune",
       component: Calibration,
     },
     {
+      id: "cameras",
       name: "Cameras",
       icon: "videocam",
       component: Cameras,
     },
     {
+      id: "settings",
       name: "Settings",
       icon: "settings",
       component: Settings,
     },
   ];
 
-  let selected = $state(tabs[0].name);
+  let startTab = getTabWithId(window.location.hash.replace("#", ""))
+  if (!startTab) {
+    startTab = tabs[0];
+    history.replaceState({ tabId: startTab.id }, "", `#${startTab.id}`);
+  }
+
+  let selected = $state(startTab);
+
+  $effect(() => {
+    document.title = selected.name;
+  });
+
+  window.addEventListener("popstate", (e) => {
+    if (e.state && e.state.tabId) {
+      const tab = getTabWithId(e.state.tabId);
+      if (tab) selected = tab;
+    }
+  });
+
+  window.addEventListener("hashchange", e => {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+
+    const tab = getTabWithId(hash);
+    if (tab) selected = tab;
+    else history.replaceState({ tabId: selected.id }, "", `#${selected.id}`);
+  });
+
+  function getTabWithId(id: string) {
+    return tabs.filter((tab) => tab.id === id)[0];
+  }
+
+  function setTabAndPushState(tab: {
+    id: string;
+    name: string;
+    icon: string;
+    component: any;
+  }) {
+    if (selected.id == tab.id) return;
+
+    selected = tab;
+    history.pushState({ tabId: selected.id }, "", `#${selected.id}`);
+  }
 </script>
 
 <nav>
   {#each tabs as tab}
     <button
-      class:selected={selected == tab.name}
-      onclick={() => (selected = tab.name)}
+      class:selected={selected.id == tab.id}
+      onclick={() => setTabAndPushState(tab)}
       title={tab.name}
     >
       {tab.name}
@@ -44,7 +90,7 @@
 
 <main>
   {#each tabs as tab}
-    {#if selected == tab.name}
+    {#if selected.id == tab.id}
       <tab.component />
     {/if}
   {/each}
