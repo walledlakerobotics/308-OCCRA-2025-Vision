@@ -1,5 +1,8 @@
 <script lang="ts">
   import Dashboard from "./Dashboard.svelte";
+  import Calibration from "./Calibration.svelte";
+  import Cameras from "./Cameras.svelte";
+  import Settings from "./Settings.svelte";
 
   let tabs = [
     {
@@ -10,17 +13,17 @@
     {
       name: "Calibration",
       icon: "tune",
-      component: null,
+      component: Calibration,
     },
     {
       name: "Cameras",
       icon: "videocam",
-      component: null,
+      component: Cameras,
     },
     {
       name: "Settings",
       icon: "settings",
-      component: null,
+      component: Settings,
     },
   ];
 
