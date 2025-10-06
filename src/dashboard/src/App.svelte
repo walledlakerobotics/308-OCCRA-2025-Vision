@@ -98,12 +98,6 @@
     color: var(--activeButton);
   }
 
-  nav li {
-    list-style-type: none;
-
-    margin-bottom: 5px;
-  }
-
   main {
     margin-left: 3.5rem;
     padding-left: 0.5rem;
