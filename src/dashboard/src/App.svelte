@@ -1,38 +1,50 @@
 <script lang="ts">
   import Dashboard from "./Dashboard.svelte";
 
-  let selected = $state("Dashboard");
+  let tabs = [
+    {
+      name: "Dashboard",
+      icon: "dashboard",
+      component: Dashboard,
+    },
+    {
+      name: "Calibration",
+      icon: "tune",
+      component: null,
+    },
+    {
+      name: "Cameras",
+      icon: "videocam",
+      component: null,
+    },
+    {
+      name: "Settings",
+      icon: "settings",
+      component: null,
+    },
+  ];
+
+  let selected = $state(tabs[0].name);
 </script>
 
 <nav>
-  <button
-    class:selected={selected == "Dashboard"}
-    onclick={() => (selected = "Dashboard")}>Dashboard</button
-  >
-  <button
-    class:selected={selected == "Calibration"}
-    onclick={() => (selected = "Calibration")}>Calibration</button
-  >
-  <button
-    class:selected={selected == "Cameras"}
-    onclick={() => (selected = "Cameras")}>Cameras</button
-  >
-  <button
-    class:selected={selected == "Settings"}
-    onclick={() => (selected = "Settings")}>Settings</button
-  >
+  {#each tabs as tab}
+    <button
+      class:selected={selected == tab.name}
+      onclick={() => (selected = tab.name)}
+      title={tab.name}
+    >
+      {tab.name}
+    </button>
+  {/each}
 </nav>
 
 <main>
-  {#if selected == "Dashboard"}
-    <Dashboard />
-  {:else if selected == "Calibration"}
-    <h1>Calibration</h1>
-  {:else if selected == "Cameras"}
-    <h1>Cameras</h1>
-  {:else if selected == "Settings"}
-    <h1>Settings</h1>
-  {/if}
+  {#each tabs as tab}
+    {#if selected == tab.name}
+      <tab.component />
+    {/if}
+  {/each}
 </main>
 
 <style>
