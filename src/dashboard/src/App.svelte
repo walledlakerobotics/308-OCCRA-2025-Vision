@@ -4,6 +4,26 @@
   import Cameras from "./Cameras.svelte";
   import Settings from "./Settings.svelte";
 
+  function getTabWithId(id: string) {
+    return tabs.filter((tab) => tab.id === id)[0];
+  }
+
+  function setTabAndPushState(tab: {
+    id: string;
+    name: string;
+    icon: string;
+    component: any;
+  }) {
+    if (selected.id == tab.id) return;
+
+    selected = tab;
+    history.pushState({ tabId: selected.id }, "", `#${selected.id}`);
+  }
+
+  function getURLHash() {
+    return window.location.hash.replace("#", "");
+  }
+
   const tabs = [
     {
       id: "dashboard",
@@ -31,7 +51,7 @@
     },
   ];
 
-  let startTab = getTabWithId(window.location.hash.replace("#", ""))
+  let startTab = getTabWithId(getURLHash());
   if (!startTab) {
     startTab = tabs[0];
     history.replaceState({ tabId: startTab.id }, "", `#${startTab.id}`);
@@ -44,36 +64,23 @@
   });
 
   window.addEventListener("popstate", (e) => {
-    if (e.state && e.state.tabId) {
-      const tab = getTabWithId(e.state.tabId);
-      if (tab) selected = tab;
+    if (!e.state || !e.state.tabId) {
+      history.replaceState({ tabId: selected.id }, "", `#${selected.id}`);
+      return;
     }
+
+    const tab = getTabWithId(e.state.tabId);
+    if (tab) selected = tab;
   });
 
   window.addEventListener("hashchange", e => {
-    const hash = window.location.hash.replace("#", "");
+    const hash = getURLHash();
     if (!hash) return;
 
     const tab = getTabWithId(hash);
     if (tab) selected = tab;
     else history.replaceState({ tabId: selected.id }, "", `#${selected.id}`);
   });
-
-  function getTabWithId(id: string) {
-    return tabs.filter((tab) => tab.id === id)[0];
-  }
-
-  function setTabAndPushState(tab: {
-    id: string;
-    name: string;
-    icon: string;
-    component: any;
-  }) {
-    if (selected.id == tab.id) return;
-
-    selected = tab;
-    history.pushState({ tabId: selected.id }, "", `#${selected.id}`);
-  }
 </script>
 
 <nav>
