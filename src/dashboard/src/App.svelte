@@ -4,7 +4,7 @@
   import Cameras from "./Cameras.svelte";
   import Settings from "./Settings.svelte";
 
-  let tabs = [
+  const tabs = [
     {
       name: "Dashboard",
       icon: "dashboard",
