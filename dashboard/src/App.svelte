@@ -3,6 +3,7 @@
   import Calibration from "./Calibration.svelte";
   import Cameras from "./Cameras.svelte";
   import Settings from "./Settings.svelte";
+    import { get } from "svelte/store";
 
   function getTabWithId(id: string) {
     return tabs.filter((tab) => tab.id === id)[0];
@@ -71,10 +72,7 @@
   });
 
   window.addEventListener("hashchange", (e) => {
-    const hash = getURLHash();
-    if (!hash) return;
-
-    const tab = getTabWithId(hash);
+    const tab = getTabWithId(getURLHash());
     if (tab) selected = tab;
     else history.replaceState({ tabId: selected.id }, "", `#${selected.id}`);
   });
