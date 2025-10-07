@@ -64,16 +64,13 @@
   });
 
   window.addEventListener("popstate", (e) => {
-    if (!e.state || !e.state.tabId) {
-      history.replaceState({ tabId: selected.id }, "", `#${selected.id}`);
-      return;
-    }
+    if (!e.state || !e.state.tabId) return;
 
     const tab = getTabWithId(e.state.tabId);
     if (tab) selected = tab;
   });
 
-  window.addEventListener("hashchange", e => {
+  window.addEventListener("hashchange", (e) => {
     const hash = getURLHash();
     if (!hash) return;
 
