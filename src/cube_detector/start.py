@@ -2,16 +2,18 @@ import cv2
 import waitress
 
 from threading import Thread
+from .camera import Camera
 from .server import app
 
 
 def cv():
-    camera = cv2.VideoCapture(0)
+    camera = Camera(0)
 
     while True:
         ret, frame = camera.read()
         if not ret:
-            break
+            cv2.waitKey(1)
+            continue
 
         cv2.imshow("Camera Feed", frame)
 
