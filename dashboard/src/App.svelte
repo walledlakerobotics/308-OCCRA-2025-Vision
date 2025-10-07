@@ -3,7 +3,6 @@
   import Calibration from "./Calibration.svelte";
   import Cameras from "./Cameras.svelte";
   import Settings from "./Settings.svelte";
-    import { get } from "svelte/store";
 
   function getTabWithId(id: string) {
     return tabs.filter((tab) => tab.id === id)[0];
