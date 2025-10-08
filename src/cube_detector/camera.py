@@ -18,7 +18,7 @@ def read_camera(index: int):
                 break
 
             for i, q in enumerate(Camera.queues[index]):
-                if i == len(Camera.queues[index]) - 1:
+                if i == 0:
                     q.put(frame) # don't create extra copy
                     continue
 
