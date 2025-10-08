@@ -1,30 +1,9 @@
-import cv2
 import waitress
 
-from threading import Thread
-from .camera import Camera
 from .server import app
 
 
-def cv():
-    camera = Camera(0)
-
-    while True:
-        ret, frame = camera.read()
-        if not ret:
-            cv2.waitKey(1)
-            continue
-
-        cv2.imshow("Camera Feed", frame)
-
-        if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
-
-
 def start():
-    cv_thread = Thread(target=cv, daemon=True)
-    cv_thread.start()
-
     waitress.serve(app, host="0.0.0.0", port=80)
 
 
