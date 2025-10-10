@@ -3,6 +3,7 @@
   import Calibration from "./Calibration.svelte";
   import Cameras from "./Cameras.svelte";
   import Settings from "./Settings.svelte";
+    import { expoOut } from "svelte/easing";
 
   function getTabWithId(id: string) {
     return tabs.filter((tab) => tab.id === id)[0];
@@ -30,6 +31,7 @@
       name: "Dashboard",
       icon: "dashboard",
       component: Dashboard,
+  
     },
     {
       id: "calibration",
@@ -58,6 +60,7 @@
   }
 
   let selected = $state(startTab);
+  let expanded = $state(false);
 
   $effect(() => {
     document.title = selected.name;
@@ -77,7 +80,7 @@
   });
 </script>
 
-<nav>
+<nav class:expanded={expanded}>
   {#each tabs as tab}
     <button
       class:selected={selected.id == tab.id}
@@ -87,6 +90,8 @@
       {tab.name}
     </button>
   {/each}
+
+  <button class="toggleExpand" onclick={() => expanded = !expanded} title={expanded ? "Expand" : "Contract"}>E</button>
 </nav>
 
 <main>
@@ -112,9 +117,11 @@
     width: 2.5rem;
 
     transition: 0.5s;
+
+    display: block;
   }
 
-  nav:hover {
+  nav.expanded {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 15rem;
@@ -134,8 +141,8 @@
     border-width: 1.5px;
     border-radius: 100%;
 
-    margin-top: 2.5px;
-    margin-bottom: 2.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 
     width: 100%;
     padding: 10px;
@@ -145,18 +152,28 @@
     transition: 0.5s;
   }
 
-  nav button:hover {
+  nav button:last-child {
+    margin-top: 65vh;
+  }
+
+  nav button.expanded {
     color: var(--borderColor);
     border-color: var(--borderColor);
+    margin-top: 10px;
   }
+
+  nav button:hover {
+      border-color: var(--borderColor);
+      color: rgb(190, 179, 237, 1);
+    }
 
   nav button:active,
   nav button.selected {
     border-color: var(--activeButton);
   }
 
-  nav:hover button:active,
-  nav:hover button.selected {
+  nav.expanded button:active,
+  nav.expanded button.selected {
     color: var(--activeButton);
   }
 
@@ -164,4 +181,5 @@
     margin-left: 3.5rem;
     padding-left: 0.5rem;
   }
+
 </style>
