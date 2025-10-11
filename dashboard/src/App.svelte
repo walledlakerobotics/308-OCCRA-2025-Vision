@@ -109,6 +109,8 @@
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 
     position: fixed;
+    z-index: 2;
+    
 
     margin: 0;
     padding: 0.5rem;
@@ -117,8 +119,6 @@
     width: 2.5rem;
 
     transition: 0.5s;
-
-    display: block;
   }
 
   nav.expanded {
@@ -162,10 +162,10 @@
     margin-top: 10px;
   }
 
-  nav button:hover {
+  /* nav button:hover {
       border-color: var(--borderColor);
       color: rgb(190, 179, 237, 1);
-    }
+    } */
 
   nav button:active,
   nav button.selected {
