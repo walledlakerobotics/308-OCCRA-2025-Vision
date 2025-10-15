@@ -8,22 +8,22 @@
     ]
 </script>
 
+<div class="navbar">
+
+    <select name="options" id=""> 
+        <!-- This is where all the cameras go -->
+        <option value="camera 121"> ;3</option>
+        <option value="camera 128">;3</option>
+
+    </select> 
+</div>
 
 <div class="veiws">
     <img src="img/placeHolder.jpg" alt="">
     <img src="img/placeHolder.jpg" alt="">
 </div>
 
-<div class="navbar">
-    <nav>
-        <select name="options" id=""> 
-            <!-- This is where all the cameras go -->
-            <option value="camera 121"> ;3</option>
-            <option value="camera 128">;3</option>
 
-        </select> 
-    </nav>
-</div>
 
 
 <style>
@@ -45,6 +45,7 @@
         background-color: var(--foregroundColor);
         display: flex;
 
+        margin-bottom: 1rem;
         margin-top: 1rem;
         margin-left: auto; margin-right: auto;
 
