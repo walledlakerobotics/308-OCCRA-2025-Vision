@@ -8,39 +8,65 @@
     ]
 </script>
 
+<div class="navbar">
+
+    <select name="options" id=""> 
+        <!-- This is where all the cameras go -->
+        <option value="camera 121"> ;3</option>
+        <option value="camera 128">;3</option>
+
+    </select> 
+</div>
 
 <div class="veiws">
     <img src="img/placeHolder.jpg" alt="">
     <img src="img/placeHolder.jpg" alt="">
 </div>
 
-<div class="navbar">
-    <nav>
-        <select name="options" id=""> sdkdsf</select>
-    </nav>
-</div>
+
 
 
 <style>
     img {
-        background-color: var(--foregroundColor);
-        display: block;
-        margin-left: auto; margin-right: auto;
-        position: relative;
-
-        border-radius: 100%;
-    }
-
-    img:last-child {
-    
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
     }
 
 
     .veiws {
-
+        justify-content: center;
+        gap: 5px;
+        display: flex;
+        flex-direction: row;
     }
 
-    .navbar {
+    select {
+        color: var(--borderColor);
         background-color: var(--foregroundColor);
+        display: flex;
+
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        margin-left: auto; margin-right: auto;
+
+        border-radius: 5px;
+        
+        
+        padding-bottom: 5px; padding-top: 5px;
+        padding-left: 25rem; padding-right: 25rem;
+
+        border-width: 1.5px;
+        border: none;
+        border-color: var(--borderColor);
+        
+
+        transition: 0.1s;
+        
     }
+
+    option {
+
+    }
+
+    
 </style>

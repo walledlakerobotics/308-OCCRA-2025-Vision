@@ -90,8 +90,6 @@
       {tab.name}
     </button>
   {/each}
-
-  <button class="toggleExpand" onclick={() => expanded = !expanded} title={expanded ? "Expand" : "Contract"}>E</button>
 </nav>
 
 <main>
@@ -107,8 +105,10 @@
     background-color: var(--foregroundColor);
     border-right: 1.5px solid var(--borderColor);
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-
+    
     position: fixed;
+    z-index: 2;
+
 
     margin: 0;
     padding: 0.5rem;
@@ -117,11 +117,9 @@
     width: 2.5rem;
 
     transition: 0.5s;
-
-    display: block;
   }
 
-  nav.expanded {
+  /* nav.expanded {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 15rem;
@@ -130,8 +128,8 @@
       color: var(--borderColorUnhover);
       border-radius: 5px;
       transition: 0.2s;
-    }
-  }
+    } 
+  } */
 
   nav button {
     background-color: var(--buttonColor);
@@ -152,20 +150,21 @@
     transition: 0.5s;
   }
 
-  nav button:last-child {
-    margin-top: 65vh;
+  nav button:hover {
+    border-color: var(--borderColor)
   }
 
-  nav button.expanded {
+  
+  /* nav button.expanded {
     color: var(--borderColor);
     border-color: var(--borderColor);
     margin-top: 10px;
-  }
+  } */
 
-  nav button:hover {
+  /* nav button:hover {
       border-color: var(--borderColor);
       color: rgb(190, 179, 237, 1);
-    }
+    } */
 
   nav button:active,
   nav button.selected {
