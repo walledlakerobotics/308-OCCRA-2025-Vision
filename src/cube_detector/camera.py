@@ -1,8 +1,10 @@
 import cv2
 import numpy as np
 import time
+import sys
 
 from flask import Response, abort
+from cv2_enumerate_cameras import enumerate_cameras
 from cv2_enumerate_cameras.camera_info import CameraInfo
 
 from threading import Thread, Lock, Event
@@ -12,8 +14,27 @@ from typing import Callable, ClassVar, overload
 type Frame = cv2.typing.MatLike
 
 
+def get_preffered_api():
+    if sys.platform == "win32":
+        return cv2.CAP_MSMF
+    elif sys.platform == "darwin":
+        return cv2.CAP_AVFOUNDATION
+    else:
+        return cv2.CAP_V4L2
+
+
+def get_index_for_path(path: str) -> int | None:
+    for camera in enumerate_cameras(get_preffered_api()):
+        if camera.path == path:
+            return camera.index
+
+
 def read_camera(path: str, stop: Event, init_done: Event):
-    camera = cv2.VideoCapture(path)
+    index = get_index_for_path(path)
+    if index is None:
+        abort(404)
+
+    camera = cv2.VideoCapture(index)
 
     init_done.set()
 
