@@ -138,3 +138,6 @@ class Camera:
 
                 with Camera.stop_events_lock:
                     Camera.stop_events[self.index].set()
+
+
+__all__ = ["Camera"]
