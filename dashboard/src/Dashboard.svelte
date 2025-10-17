@@ -8,7 +8,7 @@
     ]
 </script>
 
-<div class="navbar">
+<div class="camList">
 
     <select name="options" id=""> 
         <!-- This is where all the cameras go -->
@@ -30,6 +30,10 @@
     img {
         border-radius: 5px;
         box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .camList {
+        overflow: hidden;
     }
 
 
@@ -62,10 +66,6 @@
 
         transition: 0.1s;
         
-    }
-
-    option {
-
     }
 
     

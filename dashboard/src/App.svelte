@@ -109,6 +109,8 @@
     position: fixed;
     z-index: 2;
 
+    overflow: hidden;
+
 
     margin: 0;
     padding: 0.5rem;
