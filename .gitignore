@@ -11,3 +11,6 @@ wheels/
 
 # Svelte Build
 src/cube_detector/static
+
+# Configuration
+src/cube_detector/config.json
