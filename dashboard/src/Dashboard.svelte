@@ -49,6 +49,7 @@
         gap: 20px;
         display: flex;
         flex-direction: row;
+        padding: 1rem;
         
     }
 
