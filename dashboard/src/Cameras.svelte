@@ -86,7 +86,7 @@
 
         color: var(--borderColorUnhover);
 
-        transition: 0.5s;
+        transition: 0.2s;
     }
 
     button:hover {

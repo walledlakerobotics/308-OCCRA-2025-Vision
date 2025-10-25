@@ -137,7 +137,7 @@
   nav button {
     background-color: var(--buttonColor);
 
-    border: solid;
+    border: solid 1px;
     border-color: var(--borderColorUnhover);
     border-width: 1.5px;
     border-radius: 100%;
@@ -150,7 +150,7 @@
 
     color: rgba(0, 0, 0, 0);
 
-    transition: 0.5s;
+    transition: 0.2s;
   }
 
   nav button:hover {
@@ -172,6 +172,8 @@
   nav button:active,
   nav button.selected {
     border-color: var(--activeButton);
+    box-shadow: 0 0 5px 2.5px var(--activeButtonGlow);
+    border-width: 2px;
   }
 
   nav.expanded button:active,

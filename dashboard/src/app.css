@@ -7,6 +7,7 @@
   --borderColorUnhover: rgb(71, 60, 121);
   --buttonColor: rgb(23, 14, 48);
   --activeButton: rgb(190, 240, 255);
+  --activeButtonGlow: rgba(190, 240, 255, 0.299);
 }
 
 body {
