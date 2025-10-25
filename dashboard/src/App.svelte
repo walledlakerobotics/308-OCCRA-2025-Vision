@@ -103,8 +103,9 @@
 <style>
   nav {
     background-color: var(--foregroundColor);
-    border-right: 1.5px solid var(--borderColor);
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-right: 2px solid var(--borderColor);
+    box-shadow: 0 0 5px 2.5px var(--borderGlow);
+    
     
     position: fixed;
     z-index: 2;

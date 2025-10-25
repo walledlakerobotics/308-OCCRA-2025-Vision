@@ -1,43 +1,105 @@
 <div class="cams">
     <div class="camWrapper">
         <img src="img\placeHolder.jpg" alt="">
+        <p>Name Cam</p>
         <button> Activate </button>
     </div>
 
     <div class="camWrapper">
         <img src="img\placeHolder.jpg" alt="">
+        <p>Name Cam</p>
+        <button> Activate </button>
+    </div>
+
+    <div class="camWrapper">
+        <img src="img\placeHolder.jpg" alt="">
+        <p>Name Cam</p>
+        <button> Activate </button>
+    </div>
+
+    <div class="camWrapper">
+        <img src="img\placeHolder.jpg" alt="">
+        <p>Name Cam</p>
         <button> Activate </button>
     </div>
 </div>
 
 <style>
 
+    
+    
     img {
-        display: flex;
         border-radius: 5px;
+
+        width: 95%;
+        height: auto;
+
+        margin-top: 5px;
+
+
+    }
+
+    p {
+        scale: 120%;
+        padding: 5px;
+    }
+
+    .cams {
+        padding: 1rem;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 0.9fr));
     }
 
     .camWrapper {
         background-color: var(--foregroundColor);
-        scale: 80%;
-        border-radius: 5px;
-        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-        border: solid 1px;
-        border-color: var(--foregroundColor);
+        display: flex;
 
+        flex-direction: column;
+        align-items: center;
+
+        border-radius: 10px;
+        border: solid 2px;
+        border-color: var(--borderColor);
+        box-shadow: 0 0 5px 2.5px var(--borderGlow);
+
+        padding: 20px;
+        transition: 0.5s;
+    }
+
+
+
+    
+    button {
+        background-color: var(--buttonColor);
+
+        border: solid;
+        border-color: var(--borderColorUnhover);
+        border-width: 1.5px;
+        border-radius: 5px;
+
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        width: 100%;
         padding: 10px;
 
+        color: var(--borderColorUnhover);
 
         transition: 0.5s;
     }
 
-    .camWrapper:hover {
+    button:hover {
         border-color: var(--borderColor);
-    }
-    
-    button {
-        display: flex;
-        margin-left: auto; margin-right: auto;
+        color: var(--borderColor);
     }
 
+    button:active {
+        border-color: var(--activeButton);
+        color: var(--activeButton);
+    }
 </style>
+
+<script lang="ts">
+
+</script>

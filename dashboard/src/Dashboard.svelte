@@ -8,14 +8,10 @@
     ]
 </script>
 
-
-<div class="wrapper">
-    <div class="veiws">
-        <img src="img/placeHolder.jpg" alt="">
-        <img src="img/placeHolder.jpg" alt="">
-    </div>
+<div class="veiws">
+    <img src="img/placeHolder.jpg" alt="">
+    <img src="img/placeHolder.jpg" alt="">
 </div>
-
 
 <div class="camList">
 
@@ -32,28 +28,33 @@
 
 <style>
 
-    .camList {
-        overflow: hidden;
-        
-    }
 
-    .wrapper {
+    img {
+        border-radius: 10px;
+        border: 2px solid var(--borderColor);
+        box-shadow: 0 0 5px 2.5px var(--borderGlow);
+        
+
         background-color: var(--foregroundColor);
 
         padding: 20px;
         border-radius: 5px;
-        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    .camList {
+        overflow: hidden;
     }
 
     .veiws {
         justify-content: center;
-        gap: 5px;
+        gap: 20px;
         display: flex;
         flex-direction: row;
+        
     }
 
     select {
         color: var(--borderColor);
+
         background-color: var(--foregroundColor);
         display: flex;
 
@@ -62,7 +63,8 @@
         margin-left: auto; margin-right: auto;
 
         border-radius: 5px;
-        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+        border: solid var(--borderColor) 1.5px;
+        
         
         padding-bottom: 5px; padding-top: 5px;
         padding-left: 25rem; padding-right: 25rem;
