@@ -1,6 +1,8 @@
 
 
 <script lang="ts">
+    import placeholder from "./img/placeHolder.jpg"
+
     var cameras = 
     [
         // this will auto detect the cameras 
@@ -9,8 +11,8 @@
 </script>
 
 <div class="veiws">
-    <img src="img/placeHolder.jpg" alt="">
-    <img src="img/placeHolder.jpg" alt="">
+    <img src={placeholder} alt="">
+    <img src={placeholder} alt="">
 </div>
 
 <div class="camList">

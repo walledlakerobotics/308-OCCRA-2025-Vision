@@ -3,7 +3,9 @@
   import Calibration from "./Calibration.svelte";
   import Cameras from "./Cameras.svelte";
   import Settings from "./Settings.svelte";
-    import { expoOut } from "svelte/easing";
+  import "@fortawesome/fontawesome-free/css/all.min.css"
+
+
 
   function getTabWithId(id: string) {
     return tabs.filter((tab) => tab.id === id)[0];
@@ -29,26 +31,26 @@
     {
       id: "dashboard",
       name: "Dashboard",
-      icon: "dashboard",
+      icon: "fa-image",
       component: Dashboard,
   
     },
     {
       id: "calibration",
       name: "Calibration",
-      icon: "tune",
+      icon: "fa-bars",
       component: Calibration,
     },
     {
       id: "cameras",
       name: "Cameras",
-      icon: "videocam",
+      icon: "fa-camera",
       component: Cameras,
     },
     {
       id: "settings",
       name: "Settings",
-      icon: "settings",
+      icon: "fa-gear",
       component: Settings,
     },
   ];
@@ -85,9 +87,8 @@
     <button
       class:selected={selected.id == tab.id}
       onclick={() => setTabAndPushState(tab)}
-      title={tab.name}
-    >
-      {tab.name}
+      title={tab.name}>
+      <i class="{tab.icon} fa-solid"  ></i>
     </button>
   {/each}
 </nav>
@@ -154,7 +155,12 @@
   }
 
   nav button:hover {
-    border-color: var(--borderColor)
+    border-color: var(--borderColor);
+
+    i {
+      color: var(--borderColor);
+    }
+    
   }
 
   
@@ -174,6 +180,11 @@
     border-color: var(--activeButton);
     box-shadow: 0 0 5px 2.5px var(--activeButtonGlow);
     border-width: 2px;
+
+    i {
+      color: var(--activeButton);
+    }
+
   }
 
   nav.expanded button:active,
@@ -185,5 +196,13 @@
     margin-left: 3.5rem;
     padding-left: 0.5rem;
   }
+
+  i {
+    color: var(--borderColorUnhover);
+    transition: 0.2s;
+  }
+
+  
+
 
 </style>

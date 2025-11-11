@@ -1,24 +1,30 @@
+<script lang="ts">
+    import placeholder from "./img/placeHolder.jpg";
+
+</script>
+
+
 <div class="cams">
     <div class="camWrapper">
-        <img src="img\placeHolder.jpg" alt="">
+        <img src="{placeholder}" alt="">
         <p>Name Cam</p>
         <button> Activate </button>
     </div>
 
     <div class="camWrapper">
-        <img src="img\placeHolder.jpg" alt="">
+        <img src="{placeholder}" alt="">
         <p>Name Cam</p>
         <button> Activate </button>
     </div>
 
     <div class="camWrapper">
-        <img src="img\placeHolder.jpg" alt="">
+        <img src="{placeholder}" alt="">
         <p>Name Cam</p>
         <button> Activate </button>
     </div>
 
     <div class="camWrapper">
-        <img src="img\placeHolder.jpg" alt="">
+        <img src="{placeholder}" alt="">
         <p>Name Cam</p>
         <button> Activate </button>
     </div>
@@ -99,7 +105,3 @@
         color: var(--activeButton);
     }
 </style>
-
-<script lang="ts">
-
-</script>
