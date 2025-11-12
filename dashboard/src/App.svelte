@@ -151,7 +151,7 @@
 
     color: rgba(0, 0, 0, 0);
 
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   nav button:hover {
@@ -199,7 +199,7 @@
 
   i {
     color: var(--borderColorUnhover);
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   
