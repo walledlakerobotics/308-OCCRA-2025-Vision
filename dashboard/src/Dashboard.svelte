@@ -32,21 +32,26 @@
 
 
     img {
-        border-radius: 10px;
         border: 2px solid var(--borderColor);
-        box-shadow: 0 0 5px 2.5px var(--borderGlow);
+        border-radius: 5px;
+    }
+    .camList {
+        background-color: rgb(15, 13, 34);
         
+        overflow: hidden;
+
+        
+
+        /* margin-top: 1rem; */
+    }
+
+    .veiws {
+
 
         background-color: var(--foregroundColor);
 
         padding: 20px;
-        border-radius: 5px;
-    }
-    .camList {
-        overflow: hidden;
-    }
 
-    .veiws {
         justify-content: center;
         gap: 20px;
         display: flex;
@@ -58,7 +63,7 @@
     select {
         color: var(--borderColor);
 
-        background-color: var(--foregroundColor);
+        background-color: var(--droupDownMenuColor);
         display: flex;
 
         margin-bottom: 1rem;

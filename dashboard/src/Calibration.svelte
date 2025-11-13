@@ -16,22 +16,23 @@
     .propertieSettings {
         background-color: var(--foregroundColor);
 
-
-        height: 100%;
         padding: 10px;
 
+        height: 100%;
+
         margin: 0%;
-        display: flex;
+        position: fixed;
     }
 
     .cameraContainer  {
         background-color: var(--foregroundColor);
 
+        
+        margin-right: 50%;
+        margin-left: 50%;
         position: fixed;
+
         border-radius: 5px;
-
-        margin: auto;
-
         padding: 15px;
 
         border: solid 2px;
@@ -39,15 +40,12 @@
         border-color: var(--borderColor);
         box-shadow: 0 0 5px 2.5px var(--borderGlow);
 
-        justify-content: center;
-        display: flex;
         
-
     }
 
     select {
         color: var(--borderColor);
-        background-color: rgb(11, 1, 28);
+        background-color: var(--droupDownMenuColor);
         margin-left: auto; margin-right: auto;
 
         border-radius: 5px;

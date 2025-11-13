@@ -140,7 +140,7 @@
 
     border: solid 1px;
     border-color: var(--borderColorUnhover);
-    border-width: 1.5px;
+    border-width: 2px;
     border-radius: 100%;
 
     margin-top: 5px;
@@ -151,7 +151,7 @@
 
     color: rgba(0, 0, 0, 0);
 
-    transition: 0.3s;
+    transition: 0.2s;
   }
 
   nav button:hover {
@@ -175,11 +175,13 @@
       color: rgb(190, 179, 237, 1);
     } */
 
-  nav button:active,
+  nav button:active {
+    scale: 95%;
+  }
   nav button.selected {
     border-color: var(--activeButton);
     box-shadow: 0 0 5px 2.5px var(--activeButtonGlow);
-    border-width: 2px;
+    /* border-width: 2px; */
 
     i {
       color: var(--activeButton);
