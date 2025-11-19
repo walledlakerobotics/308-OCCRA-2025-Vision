@@ -18,6 +18,7 @@
         .propertieSettings {
             background-color: var(--foregroundColor);
 
+        padding: 10px;
 
             height: 100%;
             padding: 10px;
