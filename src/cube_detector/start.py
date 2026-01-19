@@ -1,56 +1,41 @@
-import waitress
-import cv2
-import sys
-import time
-
 from threading import Thread
 
-from .camera import Camera
-from .server import app
-
+import cv2
+import waitress
 from cv2_enumerate_cameras import enumerate_cameras
 
-def test_stream():
-    camera = Camera(0)
+from .cameras import get_api
+from .pipeline import start_all
+from .server import app
 
-    frame: cv2.typing.MatLike
-
-    camera.reg_stream("test", lambda: frame)
-
-    while True:
-        ret, frame = camera.read()
-        if not ret:
-            time.sleep(0.01)
-            continue
-
-        # Define text properties
-        text = "Hello, OpenCV!"
-        org = (50, 150)  # Bottom-left corner of the text
-        fontFace = cv2.FONT_HERSHEY_SIMPLEX
-        fontScale = 1.5
-        color = (0, 0, 255) # Red color in BGR
-        thickness = 2
-        lineType = cv2.LINE_AA
-
-        # Put the text on the image
-        cv2.putText(frame, text, org, fontFace, fontScale, color, thickness, lineType)
-
-def get_preffered_api():
-    if sys.platform == "win32":
-        return cv2.CAP_MSMF
-    elif sys.platform == "darwin":
-        return cv2.CAP_AVFOUNDATION
-    else:
-        return cv2.CAP_V4L2
+from .pipeline import pipeline
 
 
 def start():
-    Thread(target=test_stream, daemon=True).start()
+    frame = cv2.imread("test_images/test1.jpg")
+    if frame is None:
+        return
 
-    for camera in enumerate_cameras(get_preffered_api()):
-        print(camera, camera.path)
+    h, w = frame.shape[:2]
+    aspect_ratio = w / h
 
-    waitress.serve(app, host="0.0.0.0", port=5800, threads=8)
+    new_width = 500  # Desired width
+    new_height = int(new_width / aspect_ratio)
+    resized_frame = cv2.resize(
+        frame, (new_width, new_height), interpolation=cv2.INTER_AREA
+    )
+
+    processed_frame = pipeline(resized_frame, "")
+    cv2.imshow("Processed Frame", processed_frame)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+    # for camera in enumerate_cameras(get_api()):
+    #     print(camera, camera.path)
+
+    # start_all()
+
+    # waitress.serve(app, host="0.0.0.0", port=5800, threads=8)
 
 
 if __name__ == "__main__":

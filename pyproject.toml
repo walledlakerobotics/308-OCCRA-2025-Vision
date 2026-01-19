@@ -4,13 +4,17 @@ version = "0.1.0"
 description = "308 Monsters’ coprocessor vision code for the 2025 OCCRA season."
 readme = "README.md"
 authors = [{ name = "308 Monsters" }]
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
+    "appdirs>=1.4.4",
+    "casefy>=1.1.0",
     "cv2-enumerate-cameras>=1.3.0",
     "flask>=3.1.2",
     "numpy>=2.2.6",
     "opencv-contrib-python>=4.12.0.88",
-    "shapely>=2.1.2",
+    "pydantic>=2.12.3",
+    "pydantic-numpy>=8.0.1",
+    "pynetworktables>=2021.0.0",
     "waitress>=3.0.2",
 ]
 
